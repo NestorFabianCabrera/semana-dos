@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  ssh_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 2222:2222
+    volumes:
+      - ./banner.txt:/etc/ssh/banner.txt
+      - ./sshd_config:/etc/ssh/sshd_config
